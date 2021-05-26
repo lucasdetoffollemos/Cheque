@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cheques.ConsoleApp", "Cheque\Cheques.ConsoleApp.csproj", "{23B46F0B-DC81-4531-8CF4-9B2723A41060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeTestes", "ChequeTestes\ChequeTestes.csproj", "{CC7E340E-8B2D-4160-9857-1AA71BA5D9BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B46F0B-DC81-4531-8CF4-9B2723A41060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B46F0B-DC81-4531-8CF4-9B2723A41060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B46F0B-DC81-4531-8CF4-9B2723A41060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B46F0B-DC81-4531-8CF4-9B2723A41060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7E340E-8B2D-4160-9857-1AA71BA5D9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7E340E-8B2D-4160-9857-1AA71BA5D9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7E340E-8B2D-4160-9857-1AA71BA5D9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7E340E-8B2D-4160-9857-1AA71BA5D9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEEEC4AA-0789-41B3-9FF2-C4831835AB87}
+	EndGlobalSection
+EndGlobal

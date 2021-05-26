@@ -1,0 +1,17 @@
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\obj\Debug\ChequeTestes.csprojAssemblyReference.cache
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\obj\Debug\ChequeTestes.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\ChequeTestes.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\ChequeTestes.pdb
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Cheques.ConsoleApp.exe
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Cheques.ConsoleApp.pdb
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Cheques.ConsoleApp.exe.config
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\obj\Debug\ChequeTestes.csproj.CopyComplete
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\obj\Debug\ChequeTestes.dll
+C:\Users\Lucas\source\repos\Cheque\ChequeTestes\obj\Debug\ChequeTestes.pdb

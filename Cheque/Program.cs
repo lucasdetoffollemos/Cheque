@@ -10,7 +10,15 @@ namespace Cheques.ConsoleApp
     {
         static void Main(string[] args)
         {
-           
+            //Cheque cheque = new Cheque();
+
+            //string msg = cheque.ColocandoOReal("34.50");
+
+            //Console.WriteLine(msg);
+            //Console.ReadLine();
+
+            string valor = "12309";
+            Console.WriteLine(valor.All(char.IsDigit));
 
         }
     }

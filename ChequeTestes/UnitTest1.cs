@@ -9,11 +9,11 @@ namespace ChequeTestes
         [TestMethod]
         public void DeveMostrarUnidadeReal()
         {
-            string valor = "2";
+            string valor = "1.10";
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.unidades(valor), "DOIS");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "UM REAL E DEZ CENTAVOS");
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace ChequeTestes
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.decimais(valor), "TRINTA E UM");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "TRINTA E UM REAIS");
         }
 
         [TestMethod]
@@ -33,17 +33,17 @@ namespace ChequeTestes
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.centenas(valor), "OITOSSENTOS E DOIS");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "OITOSSENTOS E DOIS REAIS");
         }
 
         [TestMethod]
         public void DeveMostrarMilhares()
         {
-            string valor = "757912";
+            string valor = "757912.09";
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.milhares(valor), "SETESSENTOS E CINQUENTA E SETE MIL E NOVESSENTOS E DOZE");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "SETESSENTOS E CINQUENTA E SETE MIL E NOVESSENTOS E DOZE REAIS E NOVE CENTAVOS");
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace ChequeTestes
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.milhoes(valor), "DUZENTOS MILHÕES E NOVESSENTOS  E NOVENTA  E NOVE MIL E CENTO E VINTE E TRÊS");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "DUZENTOS MILHÕES E NOVESSENTOS  E NOVENTA  E NOVE MIL E CENTO E VINTE E TRÊS REAIS");
         }
 
         [TestMethod]
@@ -63,7 +63,88 @@ namespace ChequeTestes
 
             Cheque cheque = new Cheque();
 
-            Assert.AreEqual(cheque.bilhoes(valor), "VINTE E TRÊS BILHÕES E QUARENTA E CINCO MILHÕES E DUZENTOS  E QUARENTA  E SEIS MIL E DEZOITO");
+            Assert.AreEqual(cheque.ColocandoOReal(valor), "VINTE E TRÊS BILHÕES E QUARENTA E CINCO MILHÕES E DUZENTOS  E QUARENTA  E SEIS MIL E DEZOITO REAIS");
         }
+
+
+        [TestMethod]
+        public void NaoDeveMostrarCentavosComTamnhoDiferenteDeDois()
+        {
+
+            bool naoConseguiuValidar = false;
+
+            try
+            {
+                Cheque cheque = new Cheque();
+                cheque.ColocandoOReal("230.9");
+            }
+            catch
+            {
+                naoConseguiuValidar = true;
+            }
+            
+            Assert.AreEqual(naoConseguiuValidar, true);
+        }
+
+        [TestMethod]
+        public void NaoDeveMostrarValorMenorQue1()
+        {
+
+            bool naoConseguiuValidar = false;
+
+            try
+            {
+                Cheque cheque = new Cheque();
+                cheque.ColocandoOReal("");
+            }
+            catch
+            {
+                naoConseguiuValidar = true;
+            }
+
+            Assert.AreEqual(naoConseguiuValidar, true);
+        }
+
+
+        [TestMethod]
+        public void NaoDeveMostrarValorMaiorQue12()
+        {
+
+            bool naoConseguiuValidar = false;
+
+            try
+            {
+                Cheque cheque = new Cheque();
+                cheque.ColocandoOReal("12345678912100");
+            }
+            catch
+            {
+                naoConseguiuValidar = true;
+            }
+
+            Assert.AreEqual(naoConseguiuValidar, true);
+        }
+
+        [TestMethod]
+        public void NaoDeveMostrarValorQueContemLetra()
+        {
+
+            bool naoConseguiuValidar = false;
+
+            try
+            {
+                Cheque cheque = new Cheque();
+                cheque.ColocandoOReal("123sddfs670");
+            }
+            catch
+            {
+                naoConseguiuValidar = true;
+            }
+
+            Assert.AreEqual(naoConseguiuValidar, true);
+        }
+
+
+
     }
 }

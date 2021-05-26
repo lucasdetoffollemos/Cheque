@@ -10,10 +10,67 @@ namespace Cheques.ConsoleApp
     {
         public string Valor { get; private set; }
 
- 
+        public String PegaCentavos(string valor)
+        {
+
+            string e = "";
+
+            string centavos = " ";
+            int pos = valor.IndexOf(".");
+
+            valor = valor.Substring(pos + 1, 2);
+
+            int num = Convert.ToInt32(valor);
+
+            if (num > 0)
+            {
+                e = " E ";
+            }
+
+            if (valor.Substring(1,1) == "1")
+            {
+                centavos = " CENTAVO";
+            }
+            else if(valor.Substring(0, 1) != "0" || valor.Substring(1, 1) != "0")
+            {
+                centavos = " CENTAVOS";
+            }
+            else
+            {
+                centavos = "";
+            }
+            if(valor.Substring(0, 1) != "0")
+            {
+                valor = decimais(valor.Substring(0, 2));
+            }
+
+            else if (valor.Substring(1, 1) != "0")
+            {
+                valor = unidades(valor.Substring(1));
+            }
+            else
+            {
+                valor = "";
+            }
+
+            return e + valor + "" + centavos;
+        }
+
+        public String RemoveOPonto(string valor)
+        {
+            if (valor.Contains("."))
+            {
+                int pos = valor.IndexOf(".");
+                valor = valor.Remove(pos, 3);
+            }
+
+            return valor;
+        }
 
         public String unidades(String valorStr)
         {
+            
+
             int valor = Convert.ToInt32(valorStr);
             String nome = "";
             switch (valor)
@@ -46,6 +103,8 @@ namespace Cheques.ConsoleApp
                     nome = "NOVE";
                     break;
             }
+
+           
             return nome;
         }
 
@@ -785,5 +844,120 @@ namespace Cheques.ConsoleApp
             return nome;
         }
 
+        public String ColocandoOReal(string valor)
+        {
+                string nome = "";
+
+            if (ValidaCheque(valor))
+            {
+                string valorCentavos = "";
+
+                if (valor.Contains("."))
+                {
+                    valorCentavos = PegaCentavos(valor);
+                }
+
+                valor = RemoveOPonto(valor);
+
+                string moeda = " REAIS";
+                if (valor.Length == 1)
+                {
+                    if (valor == "1")
+                    {
+                        moeda = " REAL";
+                    }
+
+                    nome += unidades(valor) + moeda + valorCentavos;
+                }
+
+                if (valor.Length == 2)
+                {
+
+                    nome += decimais(valor) + moeda + valorCentavos;
+                }
+
+                if (valor.Length == 3)
+                {
+                    nome += centenas(valor) + moeda + valorCentavos;
+                }
+
+                if (valor.Length == 4 || valor.Length == 5 || valor.Length == 6)
+                {
+                    nome += milhares(valor) + moeda + valorCentavos;
+                }
+
+                if (valor.Length == 7 || valor.Length == 8 || valor.Length == 9)
+                {
+                    nome += milhoes(valor) + moeda + valorCentavos;
+                }
+
+                if (valor.Length == 10 || valor.Length == 11 || valor.Length == 12)
+                {
+                    nome += bilhoes(valor) + moeda + valorCentavos;
+                }
+            }
+
+            else
+            {
+                nome = "Valor inválido";
+            }
+                
+          
+            return nome;
+
+        }
+
+        public bool ValidaCheque(string valor)
+        {
+            bool conseguiValidar = true;
+
+            string centavos = "";
+            string valorCentavos = "";
+
+            if (valor.Contains("."))
+            {
+                int pos = valor.IndexOf(".");
+                valorCentavos = valor.Substring(pos + 1, 2);
+
+                if (valorCentavos.Length != 2)
+                {
+                    conseguiValidar = false;
+                    throw new ArgumentOutOfRangeException("Centavos inválidos", "Ös centavos necessitam ter 2 números.");
+                }
+
+                centavos = PegaCentavos(valor);  
+            }
+
+            valor = RemoveOPonto(valor);
+
+
+            if (valor.Length < 1)
+            {
+                conseguiValidar = false;
+                throw new ArgumentOutOfRangeException("Cheque inválido", "Ö cheque precisa ter um valor.");
+               
+            }
+           
+
+
+            if (valor.Length > 12)
+            {
+                conseguiValidar = false;
+                throw new ArgumentOutOfRangeException("Cheque inválido", "Ö cheque precisa ter até 999 bilhões.");  
+            }
+
+            if (!valor.All(char.IsDigit))
+            {
+                conseguiValidar = false;
+                throw new ArgumentOutOfRangeException("Cheque inválido", "Ö Só pode conter números");
+            }
+            
+
+            return conseguiValidar;
+
+        }
+
+
+       
     }
 }
